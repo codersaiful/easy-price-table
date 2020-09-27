@@ -1,3 +1,6 @@
-/**
-Only for FrontEnd
-*/
+.columns-wrapper {
+display: flex;
+}
+.columns-wrapper .ept_each_column {
+flex-basis: 100%;
+}

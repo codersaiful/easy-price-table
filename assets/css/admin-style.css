@@ -190,6 +190,9 @@ a.button.ept-add-new-item-button {
 .each-item-wr {
     margin-bottom: 10px;
     padding: 5px;
+    background: white;
+}
+.each-item-wr:hover{
     background: #dddddd36;
 }
 
@@ -197,4 +200,12 @@ a.button.ept-add-new-item-button {
     background: #c5c4c442;
     padding: 5px;
     margin: -5px -5px 10px -5px;
+    visibility: hidden;
 }
+.each-item-wr:hover .item-head{visibility: visible;}
+
+.each-item-wr .item-content .item-content-main{display: none;}
+.each-item-wr:hover .item-content .item-content-main{display: block;}
+.each-item-wr .item-content .item-template{display: block;}
+.each-item-wr:hover .item-content .item-template{display: none;}
+

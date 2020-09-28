@@ -62,6 +62,10 @@ if ( !defined( 'EPT_BASE_DIR' ) ) {
     define( "EPT_BASE_DIR", str_replace( '\\', '/', dirname( __FILE__ ) ) );
 }
 
+if ( !defined( 'EPT_TEMPLATE_DIR' ) ) {
+    define( "EPT_TEMPLATE_DIR", EPT_BASE_DIR . '/includes/element-template/' );
+}
+
 $ept_supported_items = array(
     'button'  => esc_html( 'Link Button', 'easy_price_table' ),
     'content' => esc_html( 'Content', 'easy_price_table' ),

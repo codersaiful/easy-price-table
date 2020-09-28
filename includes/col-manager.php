@@ -31,7 +31,7 @@ if( isset( $data['columns'] ) && is_array( $data['columns'] ) ){
                 <?php do_action( 'ept_each_col_header', $col_key, $ID, $columns, $data, $atts  ); ?>
                 
                 <?php
-                    $element_template_loc = apply_filters( 'ept_template_loc', __DIR__ . '/element-template/', $ID, $columns, $data, $atts, $col_key  );
+                    $element_template_loc = apply_filters( 'ept_template_loc', EPT_TEMPLATE_DIR, $ID, $columns, $data, $atts, $col_key  );
                     foreach( $items as $item ){
                         
                         $file_name = isset( $item['name'] ) && is_string( $item['name'] ) && !empty( $item['name'] ) ? $item['name'] : 'default';

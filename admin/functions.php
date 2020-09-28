@@ -25,10 +25,39 @@ if( !function_exists( 'ept_admin_items_handler' ) ){
                                class="ua_input"
                                >      
             <?php
-        }    
+        } 
     }
 }
 add_action( 'ept/admin/form/items/item', 'ept_admin_items_handler', 10, 5 );
+
+if( !function_exists( 'ept_admin_template_display' ) ){
+    
+    /**
+     * Hanndle each Items using do_action( 'ept/admin/form/items/item', $item_name, $item, $input_name, $item_settings, $items, $itemKey, $colKey, $column, $columns, $data, $TABLE_ID, $post );
+     */
+    function ept_admin_template_display( $item_name, $item, $input_name, $item_settings, $items, $itemKey, $colKey, $column, $columns, $data, $TABLE_ID ){
+                
+        /**
+         * Content of Items
+         */
+        $atts = false;
+        $element_template_loc = apply_filters( 'ept_template_loc', EPT_TEMPLATE_DIR, $TABLE_ID, $columns, $data, $atts, $colKey  );
+        $file_name = isset( $item['name'] ) && is_string( $item['name'] ) && !empty( $item['name'] ) ? $item['name'] : 'default';
+                        //var_dump($file_name);
+        $tag = isset( $item['tag'] ) && is_string( $item['tag'] ) && !empty( $item['tag'] ) ? $item['tag'] : 'div';
+        $settings = $setting = isset( $item['settings'] ) && is_array( $item['settings'] ) ? $item['settings'] : false;
+        $content = isset( $item['content'] ) ? $item['content'] : '';
+        $style = isset( $item['style'] ) && is_array( $item['style'] ) ? $item['style'] : array();
+        
+        $file = $element_template_loc . $item_name . '.php';
+        if( file_exists( $file ) ){
+            echo '<div class="ept_each_item_display ept_each_item ept_item_name_' . esc_attr( '$file_name' ) . '">';
+            include $file;
+            echo '</div>';
+        }
+    }
+}
+add_action( 'ept/admin/form/items/template', 'ept_admin_template_display', 10, 11 );
 
 
 if( !function_exists( 'ept_admin_content_handler' ) ){

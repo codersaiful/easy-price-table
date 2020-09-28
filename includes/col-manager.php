@@ -33,17 +33,19 @@ if( isset( $data['columns'] ) && is_array( $data['columns'] ) ){
                 <?php
                     $element_template_loc = apply_filters( 'ept_template_loc', __DIR__ . '/element-template/', $ID, $columns, $data, $atts, $col_key  );
                     foreach( $items as $item ){
-                        $name = isset( $item['name'] ) && is_string( $item['name'] ) && !empty( $item['name'] ) ? $item['name'] : 'default';
+                        
+                        $file_name = isset( $item['name'] ) && is_string( $item['name'] ) && !empty( $item['name'] ) ? $item['name'] : 'default';
+                        //var_dump($file_name);
                         $tag = isset( $item['tag'] ) && is_string( $item['tag'] ) && !empty( $item['tag'] ) ? $item['tag'] : 'div';
-                        $settings = $setting = $item;
+                        $settings = $setting = isset( $item['settings'] ) && is_array( $item['settings'] ) ? $item['settings'] : false;
                         $content = isset( $item['content'] ) ? $item['content'] : '';
                         $style = isset( $item['style'] ) && is_array( $item['style'] ) ? $item['style'] : array();
                         ?>
-                <<?php echo $tag; ?> class="ept_each_item ept_item_name_<?php echo esc_attr( $name ); ?>">    
+                <<?php echo $tag; ?> class="ept_each_item ept_item_name_<?php echo esc_attr( $file_name ); ?>">    
                         <?php
                         
                         
-                        $file = $element_template_loc . $name . '.php';
+                        $file = $element_template_loc . $file_name . '.php';
                         if( file_exists( $file ) ){
                             include $file;
                         }else{

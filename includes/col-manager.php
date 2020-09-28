@@ -12,8 +12,8 @@ if( isset( $data['columns'] ) && is_array( $data['columns'] ) ){
         $column = apply_filters( 'ept_each_column_arr', $column, $col_key, $columns, $data, $atts, $ID );
         $items = isset( $column['items'] ) && is_array( $column['items'] ) ? $column['items'] : array();
         $items_count = count( $items );
-        $status = isset( $column['status'] ) ? 'on' : 'off';
-        $recommend = isset( $column['recommend'] ) ? 'on' : 'off';
+        $status = isset( $column['status'] ) ? $column['status'] : 'on';
+        $recommend = isset( $column['recommend'] ) ? $column['recommend'] : 'off';
         $col_class_arr = array(
             'ept_each_column',
             'ept_each_column_items_ammount_' . $items_count,

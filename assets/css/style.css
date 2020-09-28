@@ -1,6 +1,101 @@
-.columns-wrapper {
-display: flex;
+/**
+Only for FrontEnd
+*/
+.easy_price_table .columns-wrapper {
+    display: flex;
+    flex-flow: row wrap;
 }
-.columns-wrapper .ept_each_column {
-flex-basis: 100%;
+.easy_price_table .columns-wrapper .ept_each_column {
+    padding: 0 15px;
+    flex-basis: 100%;
+    margin-bottom: 50px;
+}
+.easy_price_table .ept_each_column .ept_each_column_fixer {
+    border: 1px solid #dcdcdc;
+    padding: 30px;
+    background-color: #fff;
+}
+.easy_price_table .ept_each_item {
+    text-align: center;
+}
+.easy_price_table .ept_each_item img {
+    display: inline-block;
+}
+.easy_price_table .ept_each_item.ept_item_name_name {
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    color: #647589;
+    font-size: 16px;
+    margin: 20px 0;
+}
+.easy_price_table .ept_each_item.ept_item_name_price {
+    color: #0fc392;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    font-size: 30px;
+    font-weight: 700;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #dcdcdc;
+    margin-bottom: 20px;
+}
+.easy_price_table .ept_each_item.ept_item_name_price span.currency {
+    font-size: 85%;
+    margin-right: -7px;
+}
+.easy_price_table .ept_each_item.ept_item_name_price span.billing-cycle {
+    color: #647589;
+    font-weight: 400;
+    font-size: 16px;
+    text-transform: lowercase;
+}
+.easy_price_table .ept_each_item ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.easy_price_table .ept_each_item {
+    color: #647589;
+    font-size: 16px;
+    line-height: 2;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+}
+.easy_price_table .ept_each_item a.btn {
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    display: block;
+    padding: 10px;
+    margin-top: 20px;
+}
+.easy_price_table .ept_each_item .btn-primary {
+    background: #0fc392;
+    color: #fff;
+}
+.easy_price_table .ept_each_item.ept_item_name_footer {
+    margin-top: 20px;
+}
+.easy_price_table .ept_each_item a.btn:focus {
+    outline: 0;
+}
+.easy_price_table .ept_each_col_recommend_on .ept_each_item a.btn:focus,
+.easy_price_table .ept_each_col_recommend_on .ept_each_item a.btn:hover {
+    background: #1c5580;
+}
+.easy_price_table .ept_each_item a.btn:focus,
+.easy_price_table .ept_each_item a.btn:hover {
+    background: #008863;
+}
+.easy_price_table .ept_each_column.ept_each_col_recommend_on .ept_each_column_fixer {
+    box-shadow: 0px 0px 30px 10px #768fb925;
+    border-color: #0fc392;
+}
+.easy_price_table .ept_each_column.ept_each_col_recommend_on .btn-primary {
+    background: #142837;
+}
+@media (min-width: 768px){
+    .easy_price_table .columns-wrapper {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+    }
 }

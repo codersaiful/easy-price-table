@@ -1,3 +1,198 @@
-/**
-Only for Admin
-*/
+.ept-content-head .switch {
+    margin-right: 0;
+    float: right;
+}
+
+.ept-content-head {
+    display: block;
+    height: 59px;
+}
+
+.ept-each-column {
+    border: 1px solid #ddd;
+    padding: 0 10px;
+    margin-bottom: 10px;
+    background: #dddddd21;
+    position: relative;
+    overflow: hidden;
+    /*width: 300px;*/
+    margin-right: 10px;
+}
+
+.column-head {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    cursor: pointer;
+}
+
+.column-head h3 {
+    margin: 0;
+    margin-right: 15px;
+    width: 100%;
+    display: block;
+}
+.ept-item-body{
+    display: none;
+}
+.ept-handle,
+.control-icons {
+    display: inline-block;
+    text-align: center;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.ept-each-column .column-details{display: none;}
+.column-control-icons {
+    position: absolute;
+    left: unset;
+    bottom: unset;
+    right: 10px;
+    top: 16px;
+}
+.control-icons, .control-icons:before,
+.ept-items-wrapper .ept-item a,
+.item-control-icons,
+.item-control-icons-delete,.ept-dashicon,.ept-dashicon-before:before,.ept-dashicon-after:after {
+    font-family: dashicons;
+    display: inline-block;
+    line-height: 1;
+    font-weight: 400;
+    font-style: normal;
+    speak: none;
+    text-decoration: inherit;
+    text-transform: none;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    width: 20px;
+    height: 20px;
+    font-size: 0px;
+    vertical-align: top;
+    text-align: center;
+    transition: color .1s ease-in;
+}
+.ept-handle:before,
+.item-control-icons:before {
+    content: "\f545";
+    font-size: 20px;
+}
+.control-icons-delete:before,
+.item-control-icons-delete:before {
+    content: "\f335";
+    font-size: 20px;
+}
+.control-icons-edit:before,
+.ept-items-wrapper .ept-item a:before {
+    content: "\f464";
+    font-size: 20px;
+}
+.control-icons-delete,
+.item-control-icons-delete {
+    color: red;
+}
+.control-icons-edit,
+.ept-items-wrapper .ept-item a {
+    color: #2196F3;
+}
+.column-head img {
+    width: 50px;
+}
+.item--control-icons {
+    display: inline;
+    margin-right: 10px;
+    position: absolute;
+    right: 0;
+    top: 9px;
+}
+.ept-item {
+    padding: 0;
+    background: #fcfcfc;
+    margin-bottom: 11px;
+    box-shadow: 0px 3px 3px 1px #00000026;
+    position: relative;
+    border: 1px solid #30506178;
+}
+.ept-content-head h1 {
+    float: left;
+    font-size: 22px;
+    color: black;
+}
+
+.this-col-head-number>span {
+    background: #ebf6ff66;
+    margin-top: 0px !important;
+    display: inline-block;
+}
+.ept-item-body {
+    padding: 0 8px;
+}
+
+.ept-item>b {
+    padding: 9px;
+    display: block;
+    cursor: pointer;
+}
+.ept-style-wrapper .ept-style-body{display: none;padding:10px;}
+.ept-style-wrapper .style-heading {margin: 0;padding-left: 10px;cursor: pointer;font-weight: normal;}
+.ept-style-wrapper .style-heading:hover {background: #f4f9fd;}
+
+.ept-style-wrapper .style-heading:after {
+    content: "\f464";
+    font-family: dashicons;
+    padding: 5px 12px;
+    display: inline-block;
+    font-size: 12px;
+}
+
+.ept-style-wrapper {
+    border: 1px solid #ddd;
+    padding: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background: #fafafa4a;
+}
+
+
+
+
+
+
+
+
+
+
+
+.ept-column-wrapper{display: flex;flex-direction: row;flex-wrap: wrap;}
+
+.ultraaddons .ept-each-column .switch{    width: 120px;}
+.ultraaddons .ept-each-column input:checked + .slider:before{
+        -webkit-transform: translateX(0px);
+    -ms-transform: translateX(0px);
+    transform: translateX(0px);
+}
+.ultraaddons .ept-each-column .off {
+    display: block;
+    width: 100%;
+    left: 80%;
+}
+.easy-product-table .ultraaddons-panel table tr th {
+    min-width: 85px !important;
+    width: 84px !important;
+}
+.ept-status-controller {
+    display: block;
+    width: 100%;
+    padding: 15px;
+}
+.each-item-wr {
+    margin-bottom: 10px;
+    padding: 5px;
+    background: #dddddd36;
+}
+
+.each-item-wr .item-head {
+    background: #c5c4c442;
+    padding: 5px;
+    margin: -5px -5px 10px -5px;
+}

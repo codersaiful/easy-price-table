@@ -67,4 +67,6 @@ if( isset( $data['columns'] ) && is_array( $data['columns'] ) ){
     ?>
 </div> <!-- ./columns-wrapper -->
     <?php
+}else{
+    echo "<p class='ept-column-not-found-error'>" . esc_html( 'Price table Column not founded.' ) . "</p>";
 }

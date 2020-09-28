@@ -10,6 +10,12 @@ if( !function_exists( 'ept_add_meta_boxes' ) ){
     }
 }
 add_action( 'add_meta_boxes', 'ept_add_meta_boxes' );
+/**
+ * array (size=3)
+      'symbol' => string '$' (length=1)
+      'amount' => string '123' (length=3)
+      'billing-cycle' => string '/Month'
+ */
 $ept_data = array(
     'columns' => array(
         array(
@@ -18,53 +24,60 @@ $ept_data = array(
             'items' => array(
                 array(
                     'name'      => 'banner-image',
-                    'content'   => '<img src="http://testing.cm/wp-content/uploads/2020/09/lungs.png" alt="" />',
+                    'content'   =>  EPT_BASE_URL . 'assets/images/img_1.png',
                 ),
 
                 array(
                     'name'      => 'name',
-                    'content'   => 'CARDIOLOGY',
-                    'style'     => array(
-                        'color' => 'red',
-                        'background'=> 'white',
-                    ),
+                    'content'   => 'Basic',
                 ),
+
                 array(
                     'name'      => 'price',
-                    'content'   => 
-                    '<span class="currency">$</span>
-                    <span class="amount">85.99</span>
-                    <span class="billing-cycle">/mon</span>',
+                    'content'   => '',
+                    'settings'  => array(
+                        'symbol' => '$',
+                        'amount' => '100',
+                        'billing-cycle' => ' USD/Month',
+                    ),
                     
                 ),
                 array(
                     'name'      => 'content',
-                    'content'   => 
-                    '<ul><li>Regular Health Check-Ups</li>
-                    <li>Weekly Blood Test</li>
-                    <li>200 Test & Treatment</li>
-                    <li>Medical Consultation</li></ul>',
-                    
+                    'settings' => array(
+                        'content' => '<ul>
+ 	<li>24/7 Support</li>
+ 	<li>Customer Support</li>
+ 	<li>Unlimited Update</li>
+ 	<li>Basic Features</li>
+ 	<li>Upto 1 Year</li>
+ 	<li>Regular Update</li>
+</ul>',
+                    ),
                 ),
                 
                 
-                
                 array(
-                    'name'      => 'footer',
-                    'content'   => '<a href="#" class="btn btn-primary">Get Started Now</a>',
+                    'name'      => 'button',
+                    'settings' => array(
+                        'text' => 'Buy Now',
+                        'url' => 'https://wordpress.org',
+                        'new_tab' => 'on',
+                    ),
                     
                 ),
                 
             ),
             'attr' => array(
-                'something' => 'nothing',
-                'nothing'   => 'something',
+                //'something' => 'nothing',
+                //'nothing'   => 'something',
             ),
             'style' => array(
-                'color'=>'black',
-                'background'=> 'white',
+                //'color'=>'black',
+                //'background'=> 'white',
             ),
         ),
+        
         
         array(
             'status' => 'on',
@@ -72,110 +85,123 @@ $ept_data = array(
             'items' => array(
                 array(
                     'name'      => 'banner-image',
-                    'content'   => '<img src="http://testing.cm/wp-content/uploads/2020/09/microscope.png" alt="" />',
+                    'content'   =>  EPT_BASE_URL . 'assets/images/img_2.png',
                 ),
 
                 array(
                     'name'      => 'name',
-                    'content'   => 'BODY CHECKUP',
-                    'style'     => array(
-                        'color' => 'black',
-                        'background'=> 'white',
-                    ),
-                ),
-                
-                array(
-                    'name'      => 'price',
-                    'content'   => 
-                    '<span class="currency">$</span>
-                    <span class="amount">65.99</span>
-                    <span class="billing-cycle">/mon</span>',
-                    
+                    'content'   => 'Advance',
                 ),
 
                 array(
-                    'name'      => 'content',
-                    'content'   => 
-                    '<ul><li>Regular Health Check-Ups</li>
-                    <li>Weekly Blood Test</li>
-                    <li>200 Test & Treatment</li>
-                    <li>Medical Consultation</li>
-                    <li>Medical Consultation</li>
-                    <li>Medical Consultation</li>
-                    <li>Medical Consultation</li>
-                    <li>Medical Consultation</li>
-                    <li>Medical Consultation</li>
-                    <li>Labratory Service</li></ul>',
+                    'name'      => 'price',
+                    'content'   => '',
+                    'settings'  => array(
+                        'symbol' => '$',
+                        'amount' => '250',
+                        'billing-cycle' => ' USD/Month',
+                    ),
                     
                 ),
+                array(
+                    'name'      => 'content',
+                    'settings' => array(
+                        'content' => '<ul>
+ 	<li>24/7 Support</li>
+ 	<li>Quick Customer Support</li>
+ 	<li>Unlimited Update</li>
+ 	<li>Advance Features</li>
+ 	<li>Upto 5 Year</li>
+ 	<li>Instant Update</li>
+</ul>',
+                    ),
+                ),
+                
                 
                 array(
-                    'name'      => 'footer',
-                    'content'   => '<a href="#" class="btn btn-primary">Get Started Now</a>',
+                    'name'      => 'button',
+                    'settings' => array(
+                        'text' => 'Buy Now',
+                        'url' => 'https://wordpress.org',
+                        'new_tab' => 'on',
+                    ),
                     
                 ),
                 
             ),
             'attr' => array(
-                'something' => 'nothing',
+                //'something' => 'nothing',
+                //'nothing'   => 'something',
             ),
             'style' => array(
-                'color'=>'black',
-                'background'=> 'white',
+                //'color'=>'black',
+                //'background'=> 'white',
             ),
         ),
         
+        
         array(
-            'status' => 'off',
+            'status' => 'on',
             'recommend' => 'off',
             'items' => array(
                 array(
                     'name'      => 'banner-image',
-                    'content'   => '<img src="http://testing.cm/wp-content/uploads/2020/09/test-tubes.png" alt="" />',
-                ),
-                array(
-                    'name'      => 'name',
-                    'content'   => 'BlOOD TEST',
-                    'style'     => array(
-                        'color' => 'black',
-                        'background'=> 'white',
-                    ),
-                ),
-                
-                array(
-                    'name'      => 'price',
-                    'content'   => 
-                    '<span class="currency">$</span>
-                    <span class="amount">95.99</span>
-                    <span class="billing-cycle">/mon</span>',
-                    
+                    'content'   =>  EPT_BASE_URL . 'assets/images/img_3.png',
                 ),
 
                 array(
-                    'name'      => 'content',
-                    'content'   => 
-                    '<ul><li>Regular Health Check-Ups</li>
-                    <li>Weekly Blood Test</li>
-                    <li>200 Test & Treatment</li>
-                    <li>Medical Consultation</li></ul>',
+                    'name'      => 'name',
+                    'content'   => 'Enterprise',
+                ),
+
+                array(
+                    'name'      => 'price',
+                    'content'   => '',
+                    'settings'  => array(
+                        'symbol' => '$',
+                        'amount' => '810',
+                        'billing-cycle' => ' USD/Year',
+                    ),
                     
                 ),
+                array(
+                    'name'      => 'content',
+                    'settings' => array(
+                        'content' => '<ul>
+ 	<li>24/7 Support</li>
+ 	<li>Customer Support</li>
+ 	<li>Unlimited Update</li>
+ 	<li>Basic Features</li>
+ 	<li>Unlimite Time</li>
+ 	<li>Developer Version Provided</li>
+</ul>',
+                    ),
+                ),
+                
                 
                 array(
-                    'name'      => 'footer',
-                    'content'   => '<a href="#" class="btn btn-primary">Get Started Now</a>',
+                    'name'      => 'button',
+                    'settings' => array(
+                        'text' => 'Buy Now',
+                        'url' => 'https://wordpress.org',
+                        'new_tab' => 'on',
+                    ),
                     
                 ),
                 
             ),
             'attr' => array(
-                'something' => 'nothing',
+                //'something' => 'nothing',
+                //'nothing'   => 'something',
             ),
             'style' => array(
-                'color'=>'black',
-                'background'=> 'white',
+                //'color'=>'black',
+                //'background'=> 'white',
             ),
         ),
+        
+        
+       
         
     ),
 );
@@ -186,6 +212,10 @@ if( !function_exists( 'ept_metabox_render' ) ){
         $POST_ID = $TABLE_ID = $post->ID;
         global $ept_data;
         $data = get_post_meta( $POST_ID, EPT_META_NAME, true );
+        if( empty( $data ) ){
+            $data = $ept_data;
+        }
+        //var_dump($data,$ept_data);
         //echo '<pre>';
         //print_r( $ept_data );
         //print_r( $data );

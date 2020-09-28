@@ -24,10 +24,10 @@ if( !class_exists( 'EASY_PRICE_TABLE_SHORTCODE' ) ){
         * @return String  Full Price Table based on ShortCode
         */
         public static function table( $atts = false ) {
-
+            
             $pairs = array( 'exclude' => false );
             extract( shortcode_atts( $pairs, $atts ) );
-
+            $data = false;
             if( isset( $atts['id'] ) && !empty( $atts['id'] ) && is_numeric( $atts['id'] ) && get_post_type( (int) $atts['id'] ) == 'easy_price_table' ){
                 ob_start();
                 $ID = $atts['id'] = (int) $atts['id'];
@@ -70,7 +70,7 @@ if( !class_exists( 'EASY_PRICE_TABLE_SHORTCODE' ) ){
                 <?php
 
                 
-                var_dump($data['columns']);
+                //var_dump($data);
                 return ob_get_clean();
             }else{
                 

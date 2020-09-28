@@ -25,8 +25,7 @@ if( !function_exists( 'ept_admin_items_handler' ) ){
                                class="ua_input"
                                >      
             <?php
-        }
-             
+        }    
     }
 }
 add_action( 'ept/admin/form/items/item', 'ept_admin_items_handler', 10, 5 );

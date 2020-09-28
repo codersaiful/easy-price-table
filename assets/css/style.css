@@ -1,3 +1,8 @@
+p.ept-column-not-found-error {
+    color: #d00;
+    font-size: 1.5em;
+}
+
 /**
 Only for FrontEnd
 */
@@ -71,7 +76,7 @@ Only for FrontEnd
     background: #0fc392;
     color: #fff;
 }
-.easy_price_table .ept_each_item.ept_item_name_footer {
+.easy_price_table .ept_each_item.ept_item_name_price {
     margin-top: 20px;
 }
 .easy_price_table .ept_each_item a.btn:focus {

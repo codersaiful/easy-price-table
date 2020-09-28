@@ -75,12 +75,14 @@ if( $columns  ){
             <div class="ept-item-items">
                 <?php
                 if( $items ){
+                    //var_dump($items);
                     foreach( $items as $itemKey=>$item ){
                         $item = apply_filters( 'ept/admin/columns/column/items', $item, $items, $colKey, $column, $columns, $data, $TABLE_ID, $post );
                         
                         
                         $name = isset( $item['name'] ) && !empty( $item['name'] ) ? $item['name'] : false;
                         $content = isset( $item['content'] ) && !empty( $item['content'] ) ? $item['content'] : false;
+                        $item_settings = isset( $item['settings'] ) && !empty( $item['settings'] ) && is_array( $item['settings'] ) ? $item['settings'] : false;
                         $style = isset( $item['style'] ) && !empty( $item['style'] ) ? $item['style'] : false;
                         $input_name = $input_name_prefix . "[items][{$itemKey}]";
 
@@ -92,44 +94,45 @@ if( $columns  ){
                 <div class="each-item-wr"> 
                     <input type="hidden" name="<?php echo esc_attr( $input_name ); ?>[name]" value="<?php echo esc_attr( $name ); ?>">   
 
-                        <div class="item-head handle">
-                            <?php echo esc_html( $name ); ?>
-                            <div class="item-controllers">
-                                <i class="control-icons control-icons-delete">X</i>
-                            </div>
-                        </div>
-                        <div class="item-content">
-                                <?php
-                                /*
-                            if( $name == 'content' ){
+                    <div class="item-head handle">
+                        <span class="item-head-name"><?php echo esc_html( $name ); ?></span>
+                        <span class="item-controllers">
+                            <i class="control-icons control-icons-delete">X</i>
+                        </span>
+                    </div>
+                    <div class="item-content">
+                            <?php
+                            /*
+                        if( $name == 'content' ){
 
-                                $settings = array(
-                                    'textarea_name'     => $input_name . '[content]',
-                                    'textarea_rows'     => 3,
-                                    'teeny'             => true,
-                                    );
-                                wp_editor(wp_kses_post( $content ), 'eps_' . $itemKey . '_' . $colKey, $settings );
+                            $settings = array(
+                                'textarea_name'     => $input_name . '[content]',
+                                'textarea_rows'     => 3,
+                                'teeny'             => true,
+                                );
+                            wp_editor(wp_kses_post( $content ), 'eps_' . $itemKey . '_' . $colKey, $settings );
 
-                            }else{
+                        }else{
+                        ?>
+
+                        <input type="text" 
+                               name="<?php echo esc_attr( $input_name ); ?>[content]" 
+                               value="<?php echo esc_attr( $content ); ?>"
+                               class="ua_input"
+                               >     
+                        <?php    
+                        }
+
+                        */
+
+                            $item_name = isset( $item['name'] ) && !empty( $item['name'] ) ? $item['name'] : 'no_name';
+                            $input_name = $input_name . '[settings]';
+                            do_action( 'ept/admin/form/items/item/' . $item_name, $item, $input_name, $item_settings, $items, $itemKey, $colKey, $column, $columns, $data, $TABLE_ID, $post );
+                            do_action( 'ept/admin/form/items/item', $item_name, $item, $input_name, $item_settings, $items, $itemKey, $colKey, $column, $columns, $data, $TABLE_ID, $post );
+
+
                             ?>
-
-                            <input type="text" 
-                                   name="<?php echo esc_attr( $input_name ); ?>[content]" 
-                                   value="<?php echo esc_attr( $content ); ?>"
-                                   class="ua_input"
-                                   >     
-                            <?php    
-                            }
-                            
-                            */
-                                
-                                $item_name = isset( $item['name'] ) && !empty( $item['name'] ) ? $item['name'] : 'no_name';
-                                do_action( 'ept/admin/form/items/item/' . $item_name, $item, $itemKey, $input_name, $items, $colKey, $column, $columns, $data, $TABLE_ID, $post );
-                                do_action( 'ept/admin/form/items/item', $item, $itemKey, $input_name, $items, $colKey, $column, $columns, $data, $TABLE_ID, $post );
-                                
-                                
-                                ?>
-                        </div>
+                    </div>
 
                 </div> <!-- /.each-item-wr -->
                     <?php   

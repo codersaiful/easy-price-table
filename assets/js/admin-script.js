@@ -35,7 +35,34 @@ jQuery(document).ready(function($){
             handle: '.handle',//'.ultratable-handle'//this //.ultratable-handle this is handle class selector , if need '.ultratable-handle',
         });
         
-        
+        $('body').on('click', '.ept-add-new-item-button',function(){
+            var colElement = $(this).parents('.ept-each-column');
+            var val = colElement.find('.ept_elements').val();
+            var name_prefix = $(this).attr('data-name_prefix');
+            console.log(name_prefix);
+            var itemElement = colElement.find('.each-item-wr');
+            var length = itemElement.length;
+            length++;
+            if( val === '' ){
+                alert( 'Please select an Element.' );
+                return;
+            }else{
+                /**
+                <div class="item-head handle ui-sortable-handle">
+                        name                        <div class="item-controllers">
+                            <i class="control-icons control-icons-delete">X</i>
+                        </div>
+                    </div>
+                 * @type String
+                 */
+                var itm_html = '<input type="text" name="' + name_prefix + '[items][' + length + '][name]" value="' + val + '">';
+                //itm_html = '<input type="text" name="' + name_prefix + '[items][' + length + '][' + val + ']" value="' + val + '">';
+                itemElement.append(itm_html);
+                //itm_html += '<div class="item-controllers"><i class="control-icons control-icons-delete">X</i></div>';
+                //itm_html += '</div>';
+            }
+
+        });
         
     });
 });

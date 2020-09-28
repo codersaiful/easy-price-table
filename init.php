@@ -62,6 +62,14 @@ if ( !defined( 'EPT_BASE_DIR' ) ) {
     define( "EPT_BASE_DIR", str_replace( '\\', '/', dirname( __FILE__ ) ) );
 }
 
+$ept_supported_items = array(
+    'button'  => esc_html( 'Link Button', 'easy_price_table' ),
+    'content' => esc_html( 'Content', 'easy_price_table' ),
+    'price' => esc_html( 'Pricing', 'easy_price_table' ),
+    'name' => esc_html( 'Heading/Name', 'easy_price_table' ),
+    'banner-image' => esc_html( 'Banner Image', 'easy_price_table' ),
+);
+$ept_supported_items = apply_filters( 'ept_supported_items_arr', $ept_supported_items );
 include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
 include_once EPT_BASE_DIR . '/admin/plugins_loaded.php';

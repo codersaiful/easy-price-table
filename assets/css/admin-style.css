@@ -162,7 +162,9 @@
 
 
 
-
+a.button.ept-add-new-item-button {
+    margin-top: 10px;
+}
 .ept-column-wrapper{display: flex;flex-direction: row;flex-wrap: wrap;}
 
 .ultraaddons .ept-each-column .switch{    width: 120px;}

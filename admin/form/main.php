@@ -75,6 +75,7 @@ if( $columns  ){
             <div class="ept-item-items">
                 <?php
                 if( $items ){
+                    //var_dump($items);
                     foreach( $items as $itemKey=>$item ){
                         $item = apply_filters( 'ept/admin/columns/column/items', $item, $items, $colKey, $column, $columns, $data, $TABLE_ID, $post );
                         
@@ -94,10 +95,10 @@ if( $columns  ){
                     <input type="hidden" name="<?php echo esc_attr( $input_name ); ?>[name]" value="<?php echo esc_attr( $name ); ?>">   
 
                     <div class="item-head handle">
-                        <?php echo esc_html( $name ); ?>
-                        <div class="item-controllers">
+                        <span class="item-head-name"><?php echo esc_html( $name ); ?></span>
+                        <span class="item-controllers">
                             <i class="control-icons control-icons-delete">X</i>
-                        </div>
+                        </span>
                     </div>
                     <div class="item-content">
                             <?php

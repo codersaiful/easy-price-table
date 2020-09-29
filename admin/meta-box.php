@@ -244,7 +244,7 @@ if( !function_exists( 'ept_template_shortcode_render' ) ){
     function ept_template_shortcode_render(){
         global $post;
         ?>
-    <div class="easy-product-table-wrapper ept-temp-shortcode">
+    <div class="easy-product-table-wrapper ept-temp-shortcode ultraaddons">
         <div class="shortcode_box">
             <label for="ept_shortcode_text">Shortcode</label><br>
             <input class="ua_input" id="ept_shortcode_text" type="text" value="<?php echo esc_attr( '['. EPT_SHORTCODE . ' id=\'' . $post->ID . '\']' ); ?>">

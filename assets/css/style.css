@@ -2,7 +2,9 @@ p.ept-column-not-found-error {
     color: #d00;
     font-size: 1.5em;
 }
-
+.ept_each_col_status_off {
+    display: none;
+}
 /**
 Only for FrontEnd
 */

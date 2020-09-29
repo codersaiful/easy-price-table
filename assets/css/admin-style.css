@@ -160,7 +160,13 @@
 
 
 
-
+.ept-add-column-button-wrapper {
+    margin-bottom: 15px;
+    margin-top: 8px;
+    background: #f1f1f1;
+    padding: 10px;
+    display: flex;
+}
 
 a.button.ept-add-new-item-button {
     margin-top: 10px;

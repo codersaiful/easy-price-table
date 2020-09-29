@@ -205,23 +205,18 @@ $ept_data = array(
         
     ),
 );
+$ept_data = apply_filters( 'ept_global_data', $ept_data );
 //ept_metabox_render
 if( !function_exists( 'ept_metabox_render' ) ){
     function ept_metabox_render(){
         global $post;
         $POST_ID = $TABLE_ID = $post->ID;
         global $ept_data;
+        $ept_data = apply_filters( 'ept_default_data', $ept_data, $TABLE_ID, $post );
         $data = get_post_meta( $POST_ID, EPT_META_NAME, true );
         if( empty( $data ) ){
             $data = $ept_data;
         }
-        //var_dump($data,$ept_data);
-        //echo '<pre>';
-        //print_r( $ept_data );
-        //print_r( $data );
-        //echo '</pre>';
-        //var_dump($ept_data,get_post_meta( $POST_ID, EPT_META_NAME, true ));
-        
         ?>
     <div class="easy-product-table-wrapper ept-main-form ultraaddons easy-product-table">
         <input type="hidden" name="ept_nonce_value" value="<?php echo wp_create_nonce( plugin_basename( __FILE__ ) ); ?>">

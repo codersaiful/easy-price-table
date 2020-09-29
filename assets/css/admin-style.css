@@ -134,8 +134,7 @@
     cursor: pointer;
 }
 .ept-style-wrapper .ept-style-body{display: none;padding:10px;}
-.ept-style-wrapper .style-heading {margin: 0;padding-left: 10px;cursor: pointer;font-weight: normal;}
-.ept-style-wrapper .style-heading:hover {background: #f4f9fd;}
+
 
 .ept-style-wrapper .style-heading:after {
     content: "\f464";
@@ -201,6 +200,11 @@ a.button.ept-add-new-item-button {
 .each-item-wr:hover{
     background: #dddddd36;
 }
+.ept-item-wrapper-footer {
+    background: linear-gradient(144deg, #e8e8e86e, transparent);
+    margin: 33px -20px -40px -20px;
+    padding: 20px 11px 19px 11px;
+}
 
 .each-item-wr .item-head {
     background: #c5c4c442;
@@ -208,10 +212,22 @@ a.button.ept-add-new-item-button {
     margin: -5px -5px 10px -5px;
     visibility: hidden;
 }
+.each-item-wr .item-head.head_visible {
+    visibility: visible;
+}
+.each-item-wr .control-icons-edit{}
+
+.item-content-main {
+    display: none;
+}
+.item-content-main.visible{display: block;}
+.ept-style-wrapper .style-heading {margin: 0;padding-left: 10px;cursor: pointer;font-weight: normal;background: #f4f9fd;}
+.ept-style-wrapper .style-heading:hover {}
+
 .each-item-wr:hover .item-head{visibility: visible;}
 
-.each-item-wr .item-content .item-content-main{display: none;}
-.each-item-wr:hover .item-content .item-content-main{display: block;}
-.each-item-wr .item-content .item-template{display: block;}
-.each-item-wr:hover .item-content .item-template{display: none;}
+.each-item-wr .item-content .item-content-main{}
+.each-item-wr:hover .item-content .item-content-main{}
+.each-item-wr .item-content .item-template{}
+.each-item-wr:hover .item-content .item-template{}
 

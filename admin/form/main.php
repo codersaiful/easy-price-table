@@ -103,6 +103,7 @@ if( $columns  ){
                         <span class="item-head-name"><?php echo esc_html( $name ); ?></span>
                         <span class="item-controllers">
                             <i class="control-icons control-icons-delete">X</i>
+                            <i class="control-icons control-icons-edit">Edit</i>
                         </span>
                     </div>
                     <div class="item-content">
@@ -157,7 +158,7 @@ if( $columns  ){
                 
                 ?>
             </div>
-            <div class="ept-item-wrapper-head">
+            <div class="ept-item-wrapper-footer">
                 <?php do_action( 'ept/admin/form/items/bottom', $items, $input_name_prefix, $colKey, $column, $columns, $data, $TABLE_ID, $post ); ?>
             </div>
         </div>

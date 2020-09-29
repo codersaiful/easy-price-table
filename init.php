@@ -100,6 +100,10 @@ include_once EPT_BASE_DIR . '/admin/plugins_loaded.php';
 if( is_admin() ){
     include_once EPT_BASE_DIR . '/admin/meta-box.php';
     include_once EPT_BASE_DIR . '/admin/functions.php';
+    
+    
+    include_once EPT_BASE_DIR . '/admin/admin-menu.php';
+    include_once EPT_BASE_DIR . '/admin/browse.php';
 }
 
 //Including File

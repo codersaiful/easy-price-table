@@ -208,6 +208,14 @@ $ept_data = array(
 $ept_data = apply_filters( 'ept_global_data', $ept_data );
 //ept_metabox_render
 if( !function_exists( 'ept_metabox_render' ) ){
+    
+    /**
+     * Main Metabox for Easy Price Table
+     * Where user will able to Create/Custmize Table
+     * 
+     * @global type $post
+     * @global type $ept_data
+     */
     function ept_metabox_render(){
         global $post;
         $POST_ID = $TABLE_ID = $post->ID;
@@ -264,6 +272,15 @@ if( !function_exists( 'ept_preview_box_render' ) ){
 
 
 if( !function_exists( 'ept_metabox_data_save' ) ){
+    
+    /**
+     * Save Metabox Data information using $_POST and update_post_meta() function
+     * 
+     * 
+     * @param type $post_id
+     * @param type $post
+     * @return type void
+     */
     function ept_metabox_data_save( $post_id, $post ){
         
         if ( ! isset( $_POST['ept_nonce_value'] ) ) { // Check if our nonce is set.
@@ -279,11 +296,15 @@ if( !function_exists( 'ept_metabox_data_save' ) ){
         $data = isset( $_POST['data'] ) && is_array( $_POST['data'] ) ? $_POST['data'] : false;
         //var_dump($data);exit;
         
+        do_action( 'ept_data_before_save', $data, $post_id );
+        
+        $data = apply_filters( 'ept_data_on_save', $data, $post_id );
+        
         if( $data ){
             update_post_meta( $post_id, EPT_META_NAME, $data );
         }
         
-        
+        do_action( 'ept_data_after_save', $data, $post_id );
     }
 }
 add_action( 'save_post', 'ept_metabox_data_save', 10, 2 ); // 

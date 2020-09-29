@@ -127,9 +127,16 @@ if( $columns  ){
 
                             $item_name = isset( $item['name'] ) && !empty( $item['name'] ) ? $item['name'] : 'no_name';
                             $input_name = $input_name . '[settings]';
+                            
+                            echo '<div class="item-content-main">';
                             do_action( 'ept/admin/form/items/item/' . $item_name, $item, $input_name, $item_settings, $items, $itemKey, $colKey, $column, $columns, $data, $TABLE_ID, $post );
                             do_action( 'ept/admin/form/items/item', $item_name, $item, $input_name, $item_settings, $items, $itemKey, $colKey, $column, $columns, $data, $TABLE_ID, $post );
-
+                            echo '</div>';
+                            
+                            echo '<div class="item-template">';
+                            do_action( 'ept/admin/form/items/template', $item_name, $item, $input_name, $item_settings, $items, $itemKey, $colKey, $column, $columns, $data, $TABLE_ID, $post );
+                            echo '</div>';
+                            
 
                             ?>
                     </div>

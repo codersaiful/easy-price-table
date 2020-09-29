@@ -30,7 +30,9 @@ jQuery(document).ready(function($){
             }
         });
         
-        
+        function eptFormSubmit(){
+            $('body.post-type-easy_price_table input#publish[name=save],body.post-type-easy_price_table input#publish[name=publish]').trigger('click'); //publish
+        }
         $( ".ept-main-form.easy-product-table .ept-column-wrapper,.ept-item-items" ).sortable({
             handle: '.handle,.ept-handle',//'.ultratable-handle'//this //.ultratable-handle this is handle class selector , if need '.ultratable-handle',
         });
@@ -51,7 +53,7 @@ jQuery(document).ready(function($){
                 var itm_html = '<input type="hidden" name="' + name_prefix + '[items][' + length + '][name]" value="' + val + '">';
                 //itm_html = '<input type="text" name="' + name_prefix + '[items][' + length + '][' + val + ']" value="' + val + '">';
                 if(itemElement.append(itm_html)){
-                    $('body.post-type-easy_price_table input#publish[name=save],body.post-type-easy_price_table input#publish[name=publish]').trigger('click'); //publish
+                    eptFormSubmit();
                 }
 
             }
@@ -63,12 +65,13 @@ jQuery(document).ready(function($){
                 var count = $('.ept-each-column').length;
                 count++;
                 if($('.ept-column-wrapper').append('<input type="hidden" name="data[columns][' + count + '][status]" value="on">')){
-                    $('body.post-type-easy_price_table input#publish[name=save],body.post-type-easy_price_table input#publish[name=publish]').trigger('click'); //publish
+                    eptFormSubmit();
                 }
             }
-            
 
         });
+        
+        
         
     });
 });

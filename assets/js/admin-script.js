@@ -51,7 +51,7 @@ jQuery(document).ready(function($){
                 return;
             }else{
                 var itm_html = '<input type="hidden" name="' + name_prefix + '[items][' + length + '][name]" value="' + val + '">';
-                //itm_html = '<input type="text" name="' + name_prefix + '[items][' + length + '][' + val + ']" value="' + val + '">';
+                itm_html += '<input type="hidden" name="' + name_prefix + '[items][' + length + '][content]" value="Sample Text">';
                 if(itemElement.append(itm_html)){
                     eptFormSubmit();
                 }
@@ -71,7 +71,18 @@ jQuery(document).ready(function($){
 
         });
         
+        $('body').on('click','.each-item-wr .control-icons-edit',function(){
+            $(this).closest('.each-item-wr').find('.item-content-main').toggleClass('visible');
+        });
         
+        $('.ept_each_item_display.ept_each_item').each(function(){
+            var dddd = $(this).html();
+            console.log(typeof dddd);
+            if( dddd === ''){
+                alert(333);
+                console.log($(this).parents('.each-item-wr'));
+            }
+        });
         
     });
 });

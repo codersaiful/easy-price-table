@@ -171,3 +171,26 @@ if( !function_exists( 'ept_admin_add_new_element_button' ) ){
 add_action( 'ept/admin/form/items/bottom', 'ept_admin_add_new_element_button', 10, 2 );
 
 
+
+
+if( !function_exists( 'ept_admin_add_column_button' ) ){
+    
+    /**
+     * Adding new Add Column Button at the bottom of Each Column
+     * 
+     * @global type $ept_supported_items
+     */
+    function ept_admin_add_column_button( $columns, $data, $TABLE_ID ){
+        ?>
+            <div class="ultraaddons-button-wrapper ept-add-column-button-wrapper">
+                <a class="button button-primary ept-add-column-button" data-col_key="<?php echo esc_attr( 11 ); ?>">Add Column</a>
+                <span><?php echo esc_html( 'You able to add new column, by using this button. Recommended: max column should be three.', 'easy_price_table' ); ?></span>
+            </div>
+                
+        <?php
+    }
+}
+add_action( 'ept/admin/form/top', 'ept_admin_add_column_button', 10, 3 );
+add_action( 'ept/admin/form/bottom', 'ept_admin_add_column_button', 10, 3 );
+
+

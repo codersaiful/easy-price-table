@@ -32,7 +32,7 @@ jQuery(document).ready(function($){
         
         
         $( ".ept-main-form.easy-product-table .ept-column-wrapper,.ept-item-items" ).sortable({
-            handle: '.handle',//'.ultratable-handle'//this //.ultratable-handle this is handle class selector , if need '.ultratable-handle',
+            handle: '.handle,.ept-handle',//'.ultratable-handle'//this //.ultratable-handle this is handle class selector , if need '.ultratable-handle',
         });
         
         $('body').on('click', '.ept-add-new-item-button',function(){
@@ -40,27 +40,33 @@ jQuery(document).ready(function($){
             var val = colElement.find('.ept_elements').val();
             var name_prefix = $(this).attr('data-name_prefix');
             console.log(name_prefix);
-            var itemElement = colElement.find('.each-item-wr');
-            var length = itemElement.length;
+            var itemElement = colElement.find('.ept-item-items');
+            var itemElementEach = colElement.find('.each-item-wr');
+            var length = itemElementEach.length;
             length++;
             if( val === '' ){
                 alert( 'Please select an Element.' );
                 return;
             }else{
-                /**
-                <div class="item-head handle ui-sortable-handle">
-                        name                        <div class="item-controllers">
-                            <i class="control-icons control-icons-delete">X</i>
-                        </div>
-                    </div>
-                 * @type String
-                 */
-                var itm_html = '<input type="text" name="' + name_prefix + '[items][' + length + '][name]" value="' + val + '">';
+                var itm_html = '<input type="hidden" name="' + name_prefix + '[items][' + length + '][name]" value="' + val + '">';
                 //itm_html = '<input type="text" name="' + name_prefix + '[items][' + length + '][' + val + ']" value="' + val + '">';
-                itemElement.append(itm_html);
-                //itm_html += '<div class="item-controllers"><i class="control-icons control-icons-delete">X</i></div>';
-                //itm_html += '</div>';
+                if(itemElement.append(itm_html)){
+                    $('body.post-type-easy_price_table input#publish[name=save],body.post-type-easy_price_table input#publish[name=publish]').trigger('click'); //publish
+                }
+
             }
+
+        });
+        $('body').on('click', '.ept-add-column-button',function(){
+            var conf = confirm('Are you sure?.\nA Column will be add.');
+            if(conf){
+                var count = $('.ept-each-column').length;
+                count++;
+                if($('.ept-column-wrapper').append('<input type="hidden" name="data[columns][' + count + '][status]" value="on">')){
+                    $('body.post-type-easy_price_table input#publish[name=save],body.post-type-easy_price_table input#publish[name=publish]').trigger('click'); //publish
+                }
+            }
+            
 
         });
         

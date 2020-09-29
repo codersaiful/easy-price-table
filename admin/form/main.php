@@ -1,8 +1,12 @@
-<div class="ept-column-wrapper">
 <?php
 
 $columns = isset( $data['columns'] ) && is_array( $data['columns'] ) && count( $data['columns'] ) > 0 ? $data['columns'] : false;
 $columns = apply_filters( 'ept/admin/columns', $columns, $data, $TABLE_ID, $post );
+
+do_action( 'ept/admin/form/top', $columns, $data, $TABLE_ID, $post );
+?>
+<div class="ept-column-wrapper">
+<?php  
 
 if( $columns  ){
     $serial = $maxNumber = 1;
@@ -11,8 +15,9 @@ if( $columns  ){
         $column = apply_filters( 'ept/admin/columns/column', $column, $columns, $data, $TABLE_ID, $post );
         $head_label = '';
         $prefix = 'ept-content';
-        $status = isset( $column['status'] ) ? 'on' : 'off';
+        $status = isset( $column['status'] ) ? $column['status'] : 'off';
         $checkbox           = $status == 'on' ? 'checked' : '';
+        //var_dump($status);
         $recommend = isset( $column['recommend'] ) ? $column['recommend'] : 'off';
         $recommend_checkbox           = $recommend == 'on' ? 'checked' : '';
         $attr = isset( $column['attr'] ) && !empty( $column['attr'] ) && is_array( $column['attr'] ) ? $column['attr'] :  false;
@@ -168,3 +173,5 @@ if( $columns  ){
 }
 ?>
 </div> <!-- /.ept-column-wrapper -->
+<?php
+do_action( 'ept/admin/form/bottom', $columns, $data, $TABLE_ID, $post );

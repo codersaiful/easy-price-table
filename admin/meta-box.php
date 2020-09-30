@@ -4,18 +4,13 @@
 if( !function_exists( 'ept_add_meta_boxes' ) ){
     function ept_add_meta_boxes(){
         add_meta_box( 'ept_metabox_table_content', 'Table Content', 'ept_metabox_render', 'easy_price_table', 'normal', 'high');
-        add_meta_box( 'ept_metabox_temp_scode', 'Template and Shortcode', 'ept_template_shortcode_render', 'easy_price_table', 'side', 'low');
-        add_meta_box( 'ept_metabox_preview_box', 'Preview of Price Table', 'ept_preview_box_render', 'easy_price_table', 'normal', 'low');
-        //add_meta_box($id, $title, $callback, $screen, $context, $priority, $callback_args);
+        add_meta_box( 'ept_metabox_temp_scode', 'Shortcode', 'ept_template_shortcode_render', 'easy_price_table', 'side', 'low');
+        //add_meta_box( 'ept_metabox_preview_box', 'Preview of Price Table', 'ept_preview_box_render', 'easy_price_table', 'normal', 'low');
+
     }
 }
 add_action( 'add_meta_boxes', 'ept_add_meta_boxes' );
-/**
- * array (size=3)
-      'symbol' => string '$' (length=1)
-      'amount' => string '123' (length=3)
-      'billing-cycle' => string '/Month'
- */
+
 $ept_data = array(
     'columns' => array(
         array(

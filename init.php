@@ -110,7 +110,6 @@ if( is_admin() ){
 
 //Including File
 include_once EPT_BASE_DIR . '/includes/load-scripts.php';
-include_once EPT_BASE_DIR . '/includes/action-hook.php';
 include_once EPT_BASE_DIR . '/includes/functions.php';
 include_once EPT_BASE_DIR . '/includes/shortcode.php';
 

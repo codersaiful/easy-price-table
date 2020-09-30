@@ -274,7 +274,6 @@ if( !function_exists( 'ept_preview_box_render' ) ){
     <div class="easy-product-table-wrapper ept-preview">
     <h2>Preview Table</h2>
     <?php 
-    //var_dump($ept_data); 
     ?>
     </div>      
         <?php
@@ -306,7 +305,7 @@ if( !function_exists( 'ept_metabox_data_save' ) ){
         }
         
         $data = isset( $_POST['data'] ) && is_array( $_POST['data'] ) ? $_POST['data'] : false;
-        //var_dump($data);exit;
+        
         
         do_action( 'ept_data_before_save', $data, $post_id );
         

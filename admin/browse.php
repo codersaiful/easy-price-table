@@ -95,15 +95,3 @@ function ept_browse_plugin_result( $res, $action, $args ){
     
     return $res;
 }
-//
-//add_filter( 'plugins_api_args', function( $args, $action ){
-//    //var_dump($args, $action);
-//    //$args['author']          = 'XplodedThemes';
-//    return $args;
-//},100, 2 );
-//
-//
-//add_filter('plugins_api',function($bool, $action, $args){
-//    //var_dump($bool, $action, $args);
-//    return $bool;
-//},10,3);

@@ -17,7 +17,7 @@ if( $columns  ){
         $prefix = 'ept-content';
         $status = isset( $column['status'] ) ? $column['status'] : 'off';
         $checkbox           = $status == 'on' ? 'checked' : '';
-        //var_dump($status);
+
         $recommend = isset( $column['recommend'] ) ? $column['recommend'] : 'off';
         $recommend_checkbox           = $recommend == 'on' ? 'checked' : '';
         $attr = isset( $column['attr'] ) && !empty( $column['attr'] ) && is_array( $column['attr'] ) ? $column['attr'] :  false;
@@ -27,7 +27,7 @@ if( $columns  ){
         
         $input_name_prefix = "data[columns][{$colKey}]";
         $ept_datas = get_post_meta( $POST_ID, EPT_META_NAME, true );;
-        //var_dump($ept_datas['columns'][$colKey]['items']);
+
         if($colKey >= $maxNumber ){
             $maxNumber = $colKey;
         }
@@ -79,7 +79,7 @@ if( $columns  ){
             <div class="ept-item-items">
                 <?php
                 if( $items ){
-                    //var_dump($items);
+
                     foreach( $items as $itemKey=>$item ){
                         $item = apply_filters( 'ept/admin/columns/column/items', $item, $items, $colKey, $column, $columns, $data, $TABLE_ID, $post );
                         

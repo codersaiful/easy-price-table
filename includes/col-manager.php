@@ -35,7 +35,7 @@ if( isset( $data['columns'] ) && is_array( $data['columns'] ) ){
                     foreach( $items as $item ){
                         
                         $file_name = isset( $item['name'] ) && is_string( $item['name'] ) && !empty( $item['name'] ) ? $item['name'] : 'default';
-                        //var_dump($file_name);
+                        
                         $tag = isset( $item['tag'] ) && is_string( $item['tag'] ) && !empty( $item['tag'] ) ? $item['tag'] : 'div';
                         $settings = $setting = isset( $item['settings'] ) && is_array( $item['settings'] ) ? $item['settings'] : false;
                         $content = isset( $item['content'] ) ? $item['content'] : '';

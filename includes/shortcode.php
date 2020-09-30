@@ -70,7 +70,7 @@ if( !class_exists( 'EASY_PRICE_TABLE_SHORTCODE' ) ){
                 <?php
 
                 
-                //var_dump($data);
+                
                 return ob_get_clean();
             }else{
                 

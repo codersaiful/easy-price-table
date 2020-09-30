@@ -35,8 +35,7 @@ if( $columns  ){
     <div class="ept-each-column ept-each-column-<?php echo esc_attr( $colKey ); ?> ">
         <div class="column-control-icons">
             <i class="ept-each-column-handle ept-handle control-icons">Move</i>
-            <i class="control-icons control-icons-delete">X</i>
-            <i class="control-icons control-icons-edit">Edit</i>
+            <i title="<?php echo esc_html( 'Delete Column', 'easy_price_table' ); ?>" class="control-icons control-icons-delete">X</i>
         </div>
         
         <div class="column-head handle">
@@ -102,8 +101,8 @@ if( $columns  ){
                     <div class="item-head handle">
                         <span class="item-head-name"><?php echo esc_html( $name ); ?></span>
                         <span class="item-controllers">
-                            <i class="control-icons control-icons-delete">X</i>
-                            <i class="control-icons control-icons-edit">Edit</i>
+                            <i title="<?php echo esc_html( 'Delete Item/Element', 'easy_price_table' ); ?>" class="control-icons control-icons-delete">X</i>
+                            <i  title="<?php echo esc_html( 'Edit Item/Element', 'easy_price_table' ); ?>" class="control-icons control-icons-edit">Edit</i>
                         </span>
                     </div>
                     <div class="item-content">

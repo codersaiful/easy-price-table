@@ -51,7 +51,7 @@ jQuery(document).ready(function($){
                 return;
             }else{
                 var itm_html = '<input type="hidden" name="' + name_prefix + '[items][' + length + '][name]" value="' + val + '">';
-                itm_html += '<input type="hidden" name="' + name_prefix + '[items][' + length + '][content]" value="Sample Text">';
+                //itm_html += '<input type="hidden" name="' + name_prefix + '[items][' + length + '][content]" value="Sample Text">';
                 if(itemElement.append(itm_html)){
                     eptFormSubmit();
                 }
@@ -63,7 +63,7 @@ jQuery(document).ready(function($){
             var conf = confirm('Are you sure?.\nA Column will be add.');
             if(conf){
                 var count = $('.ept-each-column').length;
-                count++;
+                count+=Math.round(Math.random() * 100 + 1);
                 if($('.ept-column-wrapper').append('<input type="hidden" name="data[columns][' + count + '][status]" value="on">')){
                     eptFormSubmit();
                 }
@@ -75,12 +75,12 @@ jQuery(document).ready(function($){
             $(this).closest('.each-item-wr').find('.item-content-main').toggleClass('visible');
         });
         
-        $('.ept_each_item_display.ept_each_item').each(function(){
-            var dddd = $(this).html();
-            console.log(typeof dddd);
-            if( dddd === ''){
-                alert(333);
-                console.log($(this).parents('.each-item-wr'));
+        $('.item-content .item-template').each(function(){
+            var dddd = $(this).text();
+            dddd = dddd.replace(/\s/g, "");
+            console.log(dddd,dddd.length);
+            if( dddd.length === 0){
+                $(this).parents('.each-item-wr').addClass('visible');
             }
         });
         

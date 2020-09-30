@@ -12,7 +12,7 @@
     border: 1px solid #ddd;
     padding: 0 10px;
     margin-bottom: 10px;
-    background: #dddddd21;
+    background: #fbfbfbdb;
     position: relative;
     overflow: hidden;
     width: 300px;
@@ -22,7 +22,7 @@
 .column-head {
     padding-top: 15px;
     padding-bottom: 15px;
-    cursor: pointer;
+    cursor: move;;
 }
 
 .column-head h3 {
@@ -197,9 +197,13 @@ a.button.ept-add-new-item-button {
     padding: 5px;
     background: white;
 }
-.each-item-wr:hover{
-    background: #dddddd36;
+.each-item-wr:hover{border: 1px solid #72cf7899;}
+.each-item-wr.visible{
+    background: #ffffff;
+    border: 1px solid #72cf7899;
+    padding-bottom: 12px;
 }
+
 .ept-item-wrapper-footer {
     background: linear-gradient(144deg, #e8e8e86e, transparent);
     margin: 33px -20px -40px -20px;
@@ -207,10 +211,11 @@ a.button.ept-add-new-item-button {
 }
 
 .each-item-wr .item-head {
-    background: #c5c4c442;
+    background: #72cf784a;
     padding: 5px;
     margin: -5px -5px 10px -5px;
     visibility: hidden;
+    cursor: move;
 }
 .each-item-wr .item-head.head_visible {
     visibility: visible;
@@ -224,6 +229,7 @@ a.button.ept-add-new-item-button {
 .ept-style-wrapper .style-heading {margin: 0;padding-left: 10px;cursor: pointer;font-weight: normal;background: #f4f9fd;}
 .ept-style-wrapper .style-heading:hover {}
 
+.each-item-wr.visible .item-head{visibility: visible;}
 .each-item-wr:hover .item-head{visibility: visible;}
 
 .each-item-wr .item-content .item-content-main{}

@@ -71,6 +71,8 @@ $ept_supported_items = array(
     'content' => esc_html( 'Content', 'easy_price_table' ),
     'price' => esc_html( 'Pricing', 'easy_price_table' ),
     'name' => esc_html( 'Heading/Name', 'easy_price_table' ),
+    'spacer' => esc_html( 'Spacer', 'easy_price_table' ),
+    'divider' => esc_html( 'Divider', 'easy_price_table' ),
     'banner-image' => esc_html( 'Banner Image', 'easy_price_table' ),
 );
 $ept_supported_items = apply_filters( 'ept_supported_items_arr', $ept_supported_items );

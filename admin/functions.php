@@ -11,7 +11,8 @@ if( !function_exists( 'ept_admin_items_handler' ) ){
     function ept_admin_items_handler( $item_name, $item, $input_name, $item_settings, $items ){
         $content = isset( $item['content'] ) && !empty( $item['content'] ) ? $item['content'] : false;
         $content_col_supported = array(
-            'footer',
+            'spacer',
+            'divider',
             'banner-image',
             'name'
         );
@@ -51,7 +52,7 @@ if( !function_exists( 'ept_admin_template_display' ) ){
         
         $file = $element_template_loc . $item_name . '.php';
         if( file_exists( $file ) ){
-            echo '<div class="ept_each_item_display ept_each_item ept_item_name_' . esc_attr( '$file_name' ) . '">';
+            echo '<div class="ept_each_item_display ept_each_item ept_item_name_' . esc_attr( $file_name ) . '">';
             include $file;
             echo '</div>';
         }

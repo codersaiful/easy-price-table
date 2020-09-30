@@ -44,7 +44,7 @@ if( !function_exists( 'ept_admin_template_display' ) ){
         $atts = false;
         $element_template_loc = apply_filters( 'ept_template_loc', EPT_TEMPLATE_DIR, $TABLE_ID, $columns, $data, $atts, $colKey  );
         $file_name = isset( $item['name'] ) && is_string( $item['name'] ) && !empty( $item['name'] ) ? $item['name'] : 'default';
-                        //var_dump($file_name);
+
         $tag = isset( $item['tag'] ) && is_string( $item['tag'] ) && !empty( $item['tag'] ) ? $item['tag'] : 'div';
         $settings = $setting = isset( $item['settings'] ) && is_array( $item['settings'] ) ? $item['settings'] : false;
         $content = isset( $item['content'] ) ? $item['content'] : '';
@@ -151,7 +151,7 @@ if( !function_exists( 'ept_admin_add_new_element_button' ) ){
      */
     function ept_admin_add_new_element_button( $items, $input_name_prefix ){
         global $ept_supported_items;
-        //var_dump($input_name_prefix);
+
         ?>
             <div class="ultraaddons-button-wrapper">
                 <?php

@@ -220,6 +220,17 @@ a.button.ept-add-new-item-button {
 .each-item-wr .item-head.head_visible {
     visibility: visible;
 }
+.ept-main-form .ept-each-column .ept-item-items .item-content .item-template{text-align: center;margin: auto;}
+.item-content div label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.item-content .ua_input {
+    border-radius: 0;
+    background: #fbfbfb;
+    border: 1px solid #d6f1d8;
+}
 .each-item-wr .control-icons-edit{}
 
 .item-content-main {
@@ -237,3 +248,51 @@ a.button.ept-add-new-item-button {
 .each-item-wr .item-content .item-template{}
 .each-item-wr:hover .item-content .item-template{}
 
+
+
+
+/* Style to show Front Looking*/
+.ept_each_item_display.ept_each_item.ept_item_name_button{}
+.ept_each_item_display.ept_each_item.ept_item_name_divider{}
+.ept_each_item_display.ept_each_item.ept_item_name_spacer{color: #aaa;}
+.ept_each_item_display.ept_each_item.ept_item_name_name{
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    color: #FF5722;/*#647589;*/
+    font-size: 21px;
+    margin: 20px 0 0;
+    font-weight: 500;
+}
+.ept_each_item_display.ept_each_item.ept_item_name_price{
+    color: #0fc392;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    font-size: 30px;
+    font-weight: 700;
+}
+.ept_each_item_display.ept_each_item.ept_item_name_price span.currency {
+    font-size: 85%;
+    margin-right: -7px;
+}
+.ept_each_item_display.ept_each_item.ept_item_name_price span.billing-cycle {
+    color: #647589;
+    font-weight: 400;
+    font-size: 16px;
+    text-transform: lowercase;
+}
+
+.ept_each_item_display.ept_each_item.ept_item_name_button.ept_each_col_recommend_on .btn-primary {
+    background: #142837;
+}
+.ept_each_item_display.ept_each_item.ept_item_name_button a.btn {
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    display: block;
+    padding: 10px;
+    margin-top: 20px;
+}
+.ept_each_item_display.ept_each_item.ept_item_name_button .btn-primary {
+    background: #0fc392;
+    color: #fff;
+}
+.ept_each_item_display.ept_each_item.ept_item_name_name{}

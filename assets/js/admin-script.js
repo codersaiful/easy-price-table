@@ -41,7 +41,6 @@ jQuery(document).ready(function($){
             var colElement = $(this).parents('.ept-each-column');
             var val = colElement.find('.ept_elements').val();
             var name_prefix = $(this).attr('data-name_prefix');
-            console.log(name_prefix);
             var itemElement = colElement.find('.ept-item-items');
             var itemElementEach = colElement.find('.each-item-wr');
             var length = itemElementEach.length;
@@ -51,6 +50,20 @@ jQuery(document).ready(function($){
                 return;
             }else{
                 var itm_html = '<input type="hidden" name="' + name_prefix + '[items][' + length + '][name]" value="' + val + '">';
+                var sample_text = '';
+                if(val === 'name'){
+                    sample_text = 'Sample Text';
+                }
+                if(val === 'spacer'){
+                    sample_text = '20';
+                }
+                if(val === 'divider'){
+                    sample_text = '_________';
+                }
+                console.log(val);
+                if( sample_text !== '' ){
+                    itm_html += '<input type="hidden" name="' + name_prefix + '[items][' + length + '][content]" value="' + sample_text + '">';
+                }
                 //itm_html += '<input type="hidden" name="' + name_prefix + '[items][' + length + '][content]" value="Sample Text">';
                 if(itemElement.append(itm_html)){
                     eptFormSubmit();
@@ -78,7 +91,6 @@ jQuery(document).ready(function($){
         $('.item-content .item-template').each(function(){
             var dddd = $(this).text();
             dddd = dddd.replace(/\s/g, "");
-            console.log(dddd,dddd.length);
             if( dddd.length === 0){
                 $(this).parents('.each-item-wr').addClass('visible');
             }

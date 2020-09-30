@@ -43,6 +43,10 @@ $ept_data = array(
                     
                 ),
                 array(
+                    'name'      => 'divider',
+                    'content'   => '_____________',
+                ),
+                array(
                     'name'      => 'content',
                     'settings' => array(
                         'content' => '<ul>
@@ -104,6 +108,10 @@ $ept_data = array(
                     
                 ),
                 array(
+                    'name'      => 'divider',
+                    'content'   => '_____________',
+                ),
+                array(
                     'name'      => 'content',
                     'settings' => array(
                         'content' => '<ul>
@@ -163,6 +171,10 @@ $ept_data = array(
                         'billing-cycle' => ' USD/Year',
                     ),
                     
+                ),
+                array(
+                    'name'      => 'divider',
+                    'content'   => '_____________',
                 ),
                 array(
                     'name'      => 'content',

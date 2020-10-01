@@ -18,6 +18,13 @@
     width: 300px;
     margin-right: 10px;
 }
+.ept-each-column.status_off {
+    opacity: .5;
+}
+.ept-each-column[data-recommend="on"] .ept-item-wrapper.ultraaddons-panel {
+    border: 1px solid #72cf78;
+}
+
 
 .column-head {
     padding-top: 15px;

@@ -307,6 +307,10 @@ if( !function_exists( 'ept_metabox_data_save' ) ){
         $data = apply_filters( 'ept_data_on_save', $data, $post_id );
         
         if( $data ){
+            //Expiring Transient,when Data Saving Properly
+            $transient = EPT_META_NAME . '_' . $post_id;
+            set_transient( $transient, false, -1 );
+            
             update_post_meta( $post_id, EPT_META_NAME, $data );
         }
         

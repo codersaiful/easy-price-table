@@ -92,15 +92,15 @@ if( !function_exists( 'ept_admin_price_handler' ) ){
         $billing_cycle = isset( $item_settings['billing-cycle'] ) ? $item_settings['billing-cycle'] : '';
         ?>
         <div class="item-extra">
-            <label>Currencty Symbol</label>
+            <label><?php echo esc_html( 'Currencty Symbol', 'easy_price_table' ); ?></label>
             <input name="<?php echo esc_attr( $input_name );?>[symbol]" class="ua_input" value="<?php echo esc_attr( $symbol ); ?>">
         </div>    
         <div class="item-extra">
-            <label>Amount</label>
+            <label><?php echo esc_html( 'Amount', 'easy_price_table' ); ?></label>
             <input name="<?php echo esc_attr( $input_name );?>[amount]" class="ua_input" value="<?php echo esc_attr( $amount ); ?>">
         </div>    
         <div class="item-extra">
-            <label>Billing Cycle</label>
+            <label><?php echo esc_html( 'Billing Cycle', 'easy_price_table' ); ?></label>
             <input name="<?php echo esc_attr( $input_name );?>[billing-cycle]" class="ua_input" value="<?php echo esc_attr( $billing_cycle ); ?>">
         </div>    
 
@@ -122,15 +122,15 @@ if( !function_exists( 'ept_admin_button_handler' ) ){
         $new_tab = isset( $item_settings['new_tab'] ) ? 'checked' : '';
         ?>
         <div class="item-extra">
-            <label>Button Text</label>
+            <label><?php echo esc_html( 'Button Text', 'easy_price_table' ); ?></label>
             <input type="text" name="<?php echo esc_attr( $input_name );?>[text]" class="ua_input" value="<?php echo esc_attr( $text ); ?>">
         </div>    
         <div class="item-extra">
-            <label>URL</label>
+            <label><?php echo esc_html( 'URL', 'easy_price_table' ); ?></label>
             <input type="url" name="<?php echo esc_attr( $input_name );?>[url]" class="ua_input" value="<?php echo esc_attr( $url ); ?>">
         </div>    
         <div class="item-extra">
-            <label>New Tab</label>
+            <label><?php echo esc_html( 'New Tab', 'easy_price_table' ); ?></label>
             <input type="checkbox" name="<?php echo esc_attr( $input_name );?>[new_tab]" <?php echo $new_tab;?>>
         </div>    
 
@@ -184,7 +184,7 @@ if( !function_exists( 'ept_admin_add_column_button' ) ){
     function ept_admin_add_column_button( $columns, $data, $TABLE_ID ){
         ?>
             <div class="ultraaddons-button-wrapper ept-add-column-button-wrapper">
-                <a class="button button-primary ept-add-column-button" data-col_key="<?php echo esc_attr( 11 ); ?>">Add Column</a>
+                <a class="button button-primary ept-add-column-button" data-col_key="<?php echo esc_attr( 11 ); ?>"><?php echo esc_html( 'Add Column', 'easy_price_table' ); ?></a>
                 <span><?php echo esc_html( 'You able to add new column, by using this button. Recommended: max column should be three.', 'easy_price_table' ); ?></span>
             </div>
                 

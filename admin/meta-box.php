@@ -253,8 +253,9 @@ if( !function_exists( 'ept_template_shortcode_render' ) ){
         ?>
     <div class="easy-product-table-wrapper ept-temp-shortcode ultraaddons">
         <div class="shortcode_box">
-            <label for="ept_shortcode_text">Shortcode</label><br>
+            <label for="ept_shortcode_text"><?php echo esc_html( 'Shortcode', 'easy_price_table' ); ?></label><br>
             <input class="ua_input" id="ept_shortcode_text" type="text" value="<?php echo esc_attr( '['. EPT_SHORTCODE . ' id=\'' . $post->ID . '\']' ); ?>">
+            <p><?php echo esc_html( 'Just copy your shortcode and Paste in to your page/post or any of your custom_post.', 'easy_price_table' ); ?></p>
         </div>
     </div>      
         <?php

@@ -8,6 +8,7 @@ jQuery(document).ready(function($){
             }else if($(this).is(":not(:checked)")){
                 $('.' + target).val('off');
             }
+            $('.' + target).trigger('change');
         });
         
         
@@ -84,15 +85,28 @@ jQuery(document).ready(function($){
 
         });
         
+        /**
+         * Status/Recmmend wise Class Hanndle
+         */
+        $('body').on('change','.ept-switch',function(){
+            var type = $(this).attr('data-type');
+            var val = $(this).val();
+            var ECOL = $(this).parents( '.ept-each-column' );
+            ECOL.toggleClass(type + '_off');
+            ECOL.attr('data-' + type, val);
+        });
+        
         $('body').on('click','.each-item-wr .control-icons-edit',function(){
             $(this).closest('.each-item-wr').find('.item-content-main').toggleClass('visible');
         });
         
         $('.item-content .item-template').each(function(){
-            var dddd = $(this).text();
-            dddd = dddd.replace(/\s/g, "");
-            if( dddd.length === 0){
-                $(this).parents('.each-item-wr').addClass('visible');
+            var text = $(this).text();
+            var ItemWrEl = $(this).parents('.each-item-wr');
+            var item_name = ItemWrEl.data('item_name');
+            text = text.replace(/\s/g, "");
+            if( text.length === 0 && item_name !== 'banner-image'){
+                ItemWrEl.addClass('visible');
             }
         });
         

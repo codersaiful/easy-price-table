@@ -32,7 +32,13 @@ if( $columns  ){
             $maxNumber = $colKey;
         }
 ?>
-    <div class="ept-each-column ept-each-column-<?php echo esc_attr( $colKey ); ?> ">
+    <div 
+        class="ept-each-column ept-each-column-<?php echo esc_attr( $colKey ); ?> recommend_<?php echo esc_attr( $recommend ); ?> status_<?php echo esc_attr( $status ); ?>" 
+        data-col_key="<?php echo esc_attr( $colKey ); ?>" 
+        data-status="<?php echo esc_attr( $status ); ?>" 
+        data-recommend="<?php echo esc_attr( $recommend ); ?>" 
+        data-max_col_number="<?php echo esc_attr( $maxNumber ); ?>"
+        >
         <div class="column-control-icons">
             <i class="ept-each-column-handle ept-handle control-icons">Move</i>
             <i title="<?php echo esc_html( 'Delete Column', 'easy_price_table' ); ?>" class="control-icons control-icons-delete">X</i>
@@ -50,7 +56,13 @@ if( $columns  ){
             
             <div class="ept-status-controller">
                 
-                <input type="hidden" name="<?php echo esc_attr( $input_name_prefix ); ?>[recommend]" value="<?php echo esc_attr( $recommend ); ?>" class="<?php echo esc_attr( $prefix . '-' . $colKey ); ?>-recommend">
+                <input 
+                    type="hidden" 
+                    name="<?php echo esc_attr( $input_name_prefix ); ?>[recommend]" 
+                    value="<?php echo esc_attr( $recommend ); ?>" 
+                    data-type="recommend" 
+                    class="<?php echo esc_attr( $prefix . '-' . $colKey ); ?>-recommend ept-switch ept-recommend-switch"
+                    >
 
                 <label class="switch recommended-item">
                     <input class="ept-placeholder-onoff" data-target="<?php echo esc_attr( $prefix . '-' . $colKey ); ?>-recommend" type="checkbox" <?php echo esc_attr( $recommend_checkbox ); ?>>
@@ -60,7 +72,13 @@ if( $columns  ){
                 </label>
 
 
-                <input type="hidden" name="<?php echo esc_attr( $input_name_prefix ); ?>[status]" value="<?php echo esc_attr( $status ); ?>" class="<?php echo esc_attr( $prefix . '-' . $colKey ); ?>-status">
+                <input 
+                    type="hidden" 
+                    name="<?php echo esc_attr( $input_name_prefix ); ?>[status]" 
+                    value="<?php echo esc_attr( $status ); ?>" 
+                    data-type="status"
+                    class="<?php echo esc_attr( $prefix . '-' . $colKey ); ?>-status ept-switch  ept-status-switch"
+                    >
 
                 <label class="switch">
                     <input class="ept-placeholder-onoff" data-target="<?php echo esc_attr( $prefix . '-' . $colKey ); ?>-status" type="checkbox" <?php echo esc_attr( $checkbox ); ?>>
@@ -72,7 +90,7 @@ if( $columns  ){
         </div>
         
         
-        <div class="ept-item-wrapper ultraaddons-panel">
+        <div class="ept-item-wrapper ultraaddons-panel ept-item-wrapper-<?php echo esc_attr( $colKey ); ?>" data-col_key="<?php echo esc_attr( $colKey ); ?>">
             <div class="ept-item-wrapper-head">
                 <?php do_action( 'ept/admin/form/items/top', $items, $input_name_prefix, $colKey, $column, $columns, $data, $TABLE_ID ); ?>
             </div>
@@ -81,6 +99,7 @@ if( $columns  ){
                 if( $items ){
 
                     foreach( $items as $itemKey=>$item ){
+                        
                         $item = apply_filters( 'ept/admin/columns/column/items', $item, $items, $colKey, $column, $columns, $data, $TABLE_ID, $post );
                         
                         
@@ -95,7 +114,7 @@ if( $columns  ){
                         }
 
                         ?>
-                <div class="each-item-wr"> 
+                <div class="each-item-wr" data-item_key="<?php echo esc_attr( $itemKey ); ?>" data-item_name="<?php echo esc_attr( $name ); ?>"> 
                     <input type="hidden" name="<?php echo esc_attr( $input_name ); ?>[name]" value="<?php echo esc_attr( $name ); ?>">   
 
                     <div class="item-head handle">

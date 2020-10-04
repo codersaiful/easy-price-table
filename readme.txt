@@ -1,6 +1,6 @@
 === Easy Price Table ===
 Contributors: codersaiful,codeastrology
-Tags: wc product table,woocommerce product table, product table, wc table, quick order table, wholesale table, restaurants table
+Tags: pricing table, price table, wordpress price table, wp pricing table, wp price table, table of pricing
 Requires at least: 4.0.0
 Tested up to: 5.5.1
 Requires PHP: 5.6

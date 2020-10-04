@@ -300,12 +300,69 @@ if( !function_exists( 'ept_metabox_data_save' ) ){
             return;
         }
         
-        $data = isset( $_POST['data'] ) && is_array( $_POST['data'] ) ? $_POST['data'] : false;
+        $input_post = filter_input_array( INPUT_POST );
+        $post_datas = isset( $input_post['data'] ) && is_array( $input_post['data'] ) ? $input_post['data'] : array();
+        
+
+        $filter = array(
+            'columns' => array(
+                'flags'  => FILTER_REQUIRE_ARRAY,
+            ),
+        );
+        $filter = apply_filters( 'ept_post_dat_filter_on_submit', $filter, $post_datas, $post_id );
+        $post_datas = filter_var_array( $post_datas, $filter, false );
+        $post_datas = apply_filters( 'ept_post_data_on_submit', $post_datas, $post_id );
+        
+        if( !is_array( $post_datas['columns'] ) ){
+            return;
+        }
+        $columns = $post_datas['columns'];
+
+        foreach( $columns as $key=>$column ){
+            $columns_filter = array(
+                'recommend' => array(
+                    'filter' => FILTER_SANITIZE_STRING,
+                ),
+                
+                'status' => array(
+                    'filter' => FILTER_SANITIZE_STRING,
+                ),
+                
+                'items' => array(
+                    'flags' => FILTER_REQUIRE_ARRAY,
+                ),
+                
+                'attr' => array(
+                    'flags' => FILTER_REQUIRE_ARRAY,
+                ),
+                
+                'style' => array(
+                    'flags' => FILTER_REQUIRE_ARRAY,
+                ),
+                
+            );
+            $filter = array(
+            'columns' => array(
+                'flags'  => FILTER_REQUIRE_ARRAY,
+            ),
+        );
+        $columns_filter = apply_filters( 'ept_columns_filter_on_submit', $columns_filter, $column, $post_id );
+        
+        $data['columns'][] = filter_var_array( $column, $columns_filter, false );
+        }
         
         
-        do_action( 'ept_data_before_save', $data, $post_id );
         
-        $data = apply_filters( 'ept_data_on_save', $data, $post_id );
+        /**
+         * Post Data just after Validation and Filtering
+         * We can Use this Filter to manipulate Data variable using Filter from addons of
+         * Easy Price Table Plugin
+         */
+        $data = apply_filters( 'ept_data_on_save', $data, $post_datas, $post_id );
+        
+        do_action( 'ept_data_before_save', $data, $post_datas, $post_id );
+        
+        
         
         if( $data ){
             //Expiring Transient,when Data Saving Properly
@@ -315,7 +372,7 @@ if( !function_exists( 'ept_metabox_data_save' ) ){
             update_post_meta( $post_id, EPT_META_NAME, $data );
         }
         
-        do_action( 'ept_data_after_save', $data, $post_id );
+        do_action( 'ept_data_after_save', $data, $post_datas, $post_id );
     }
 }
 add_action( 'save_post', 'ept_metabox_data_save', 10, 2 ); // 

@@ -29,6 +29,7 @@ if( !function_exists( 'ept_plugin_meta' ) ){
         if( $plugin_file == EPT_BASE_NAME ){
             //$plugin_meta[] = '<a href="https://wcquantity.com/wc-quantity-plus-minus-button/" title="' . esc_attr__( 'Plugin Features', 'easy_price_table' ) . '">' . esc_html__( 'Features', 'easy_price_table' ) . '</a>';
             //$plugin_meta[] = '<a href="https://wcquantity.com/product/head-phone/" title="' . esc_attr__( 'Plugin Demo', 'easy_price_table' ) . '" target="_blank">'.esc_html__( 'Demo','easy_price_table' ).'</a>';
+            $plugin_meta[] = '<a href="https://github.com/codersaiful/easy-price-table" title="' . esc_attr__( 'Github Repo', 'easy_price_table' ) . '" target="_blank">'.esc_html__( 'Github Repo','easy_price_table' ).'</a>';
             $plugin_meta[] = '<a href="mailto:codersaiful@gmail.com" title="' . esc_attr__( 'Mail to Developer', 'easy_price_table' ) . '" target="_blank">'.esc_html__( 'Contact to Developer','easy_price_table' ).'</a>';
 
         }

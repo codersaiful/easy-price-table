@@ -15,6 +15,8 @@ Make Responsive Mobile Friendly Price/Pricing Table for Any where of your Websit
 
 **[Demo Price Table](https://wooproducttable.com/pricing-plan/)**
 
+**[Github Repo](https://github.com/codersaiful/easy-price-table)**
+
 **Easy Price Table** plugin offers to display your Price Table in page by shortcode as table. 
 
 * Easy Customize able

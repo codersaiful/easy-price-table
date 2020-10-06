@@ -13,7 +13,7 @@ Easily make a Price table at Any where of your website, just using a shortcode. 
 
 Make Responsive Mobile Friendly Price/Pricing Table for Any where of your Website. This plugin will provide a shortcode like [] and User able to show Price table anywhere. Easily show a Price table at Any where of your website, just using a shortcode. No need Programming knowledge. Available different template.
 
-**[Demo Price Table](https://wooproducttable.com/purchase-table/)**
+**[Demo Price Table](https://wooproducttable.com/pricing-plan/)**
 
 **Easy Price Table** plugin offers to display your Price Table in page by shortcode as table. 
 

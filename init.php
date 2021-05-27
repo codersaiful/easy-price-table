@@ -2,16 +2,16 @@
 
 /**
  * Plugin Name: Easy Price Table
- * Plugin URI: https://wooproducttable.com/pricing-plan/
+ * Plugin URI: https://wordpress.org/plugins/easy-price-table/
  * Description: Easily show a Price table at Any where of your website, just using a shortcode. No need Programming knowledge. Available different template
  * Author: Saiful Islam
  * Author URI: https://profiles.wordpress.org/codersaiful/#content-plugins
  * 
- * Version: 1.0.0
+ * Version: 1.0.1
  * Requires at least:    4.0.0
- * Tested up to:         5.5.2
+ * Tested up to:         5.7.2
  * WC requires at least: 3.7
- * WC tested up to:      4.5.2
+ * WC tested up to:      5.3.0
  * Text Domain: easy_price_table
  * Domain Path: /languages/
  */

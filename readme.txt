@@ -2,7 +2,7 @@
 Contributors: codersaiful,codeastrology
 Tags: pricing table, price table, wordpress price table, wp pricing table, wp price table, table of pricing
 Requires at least: 4.0.0
-Tested up to: 5.5.1
+Tested up to: 5.7.2
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -13,7 +13,8 @@ Easily make a Price table at Any where of your website, just using a shortcode. 
 
 Make Responsive Mobile Friendly Price/Pricing Table for Any where of your Website. This plugin will provide a shortcode like [] and User able to show Price table anywhere. Easily show a Price table at Any where of your website, just using a shortcode. No need Programming knowledge. Available different template.
 
-**[Demo Price Table](https://wooproducttable.com/pricing-plan/)**
+
+**[Github Repo](https://github.com/codersaiful/easy-price-table)**
 
 **Easy Price Table** plugin offers to display your Price Table in page by shortcode as table. 
 
